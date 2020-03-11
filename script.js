@@ -20,6 +20,18 @@ for (var i = 0; i < colorbtn.length; i++)
 }
 
 
+var secContainer = document.createElement('div');
+secContainer.classList.add('container');
+body.appendChild(secContainer);
+
+var addSelect = document.createElement('select');
+secContainer.appendChild(addSelect);
+addSelect.id = 'color-dropdown';
+
+// var colorList = [green: name]
+
+
+
 
 
 
