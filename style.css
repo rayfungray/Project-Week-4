@@ -8,3 +8,7 @@
   display: flex;
   justify-content: center;
 }
+
+.add-color-btn{
+  margin-left: 20px;
+}

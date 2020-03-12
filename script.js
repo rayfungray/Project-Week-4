@@ -28,7 +28,72 @@ var addSelect = document.createElement('select');
 secContainer.appendChild(addSelect);
 addSelect.id = 'color-dropdown';
 
-// var colorList = [green: name]
+
+
+
+
+
+
+var colorList = 
+[
+{name : 'Please choose a color', hex:'#FFFFF'},
+{name  : 'green', hex : 'green'},
+{name  : 'red', hex : 'red'},
+{name  : 'orange', hex : 'green'},
+{name  : 'purple', hex : 'green'},
+{name  : 'pink', hex : 'green'},
+{name  : 'pink', hex : 'green'},
+{name  : 'pink', hex : 'green'},
+{name  : 'pink', hex : 'green'},
+{name  : 'pink', hex : 'green'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'},
+{name  : 'pink', hex : 'pink'}
+];
+
+console.log(colorList.length);
+
+for ( var i = 0 ; i < colorList.length; i++)
+{
+  var addOption = document.createElement('option');
+  addOption.text = colorList[i].name;
+  addOption.value = colorList[i].hex;
+  console.log(addOption);
+  addSelect.add(addOption);
+}
+
+
+var addColorBtn = document.createElement('button');
+addColorBtn.innerHTML = "Add Color";
+addColorBtn.classList.add('add-color-btn');
+secContainer.appendChild(addColorBtn);
+
+addColorBtn.addEventListener('click',function(){
+
+  var colorHex = addSelect.options[addSelect.selectedIndex].value;
+  var colorName = addSelect.options[addSelect.selectedIndex].value;
+
+  if(addSelect.selectedIndex === 0)
+  {
+    alert('Please select a color');
+  }
+  else
+  {
+    addButton(addContainer, colorName, colorHex);
+  }  
+
+});
+
+
+
 
 
 
