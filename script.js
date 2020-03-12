@@ -6,19 +6,14 @@ addButton(addContainer,'red','red');
 addButton(addContainer, 'blue', 'blue');
 addButton(addContainer, 'green', 'green');
 
-
-// var addColor = document.createElement('button');
-// addColor.
-
 var colorbtn = document.getElementsByClassName('color-btn');
 
 for (var i = 0; i < colorbtn.length; i++)
 {
-  colorbtn[i].addEventListener('click',function(event){
+    colorbtn[i].addEventListener('click',function(event){
     changeBKColor(body,event.target.value);
   })
 }
-
 
 var secContainer = document.createElement('div');
 secContainer.classList.add('container');
@@ -29,11 +24,6 @@ secContainer.appendChild(addSelect);
 addSelect.id = 'color-dropdown';
 
 
-
-
-
-
-
 var colorList = 
 [
 {name : 'Please choose a color', hex:'#FFFFF'},
@@ -41,35 +31,34 @@ var colorList =
 {name  : 'red', hex : 'red'},
 {name  : 'orange', hex : 'green'},
 {name  : 'purple', hex : 'green'},
-{name  : 'pink', hex : 'green'},
-{name  : 'pink', hex : 'green'},
-{name  : 'pink', hex : 'green'},
-{name  : 'pink', hex : 'green'},
-{name  : 'pink', hex : 'green'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'},
-{name  : 'pink', hex : 'pink'}
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'},
+{name  : 'pink', hex : '#FFC0CB'}
 ];
 
-console.log(colorList.length);
+// console.log(colorList.length);
 
 for ( var i = 0 ; i < colorList.length; i++)
 {
   var addOption = document.createElement('option');
   addOption.text = colorList[i].name;
   addOption.value = colorList[i].hex;
-  console.log(addOption);
+  // console.log(addOption);
   addSelect.add(addOption);
 }
-
 
 var addColorBtn = document.createElement('button');
 addColorBtn.innerHTML = "Add Color";
@@ -79,7 +68,7 @@ secContainer.appendChild(addColorBtn);
 addColorBtn.addEventListener('click',function(){
 
   var colorHex = addSelect.options[addSelect.selectedIndex].value;
-  var colorName = addSelect.options[addSelect.selectedIndex].value;
+  var colorName = addSelect.options[addSelect.selectedIndex].text;
 
   if(addSelect.selectedIndex === 0)
   {
@@ -88,18 +77,18 @@ addColorBtn.addEventListener('click',function(){
   else
   {
     addButton(addContainer, colorName, colorHex);
+    addSelect.remove(addSelect.selectedIndex);
   }  
 
+for (var i = 0; i < colorbtn.length; i++)
+{
+  console.log(colorbtn[i]);
+    colorbtn[i].addEventListener('click',function(event){
+    changeBKColor(body,event.target.value);
+  })
+}
+console.log("clicked button");
 });
-
-
-
-
-
-
-
-
-
 
 function addButton(container, color, colorHex){
   var addBtn = document.createElement('button');
