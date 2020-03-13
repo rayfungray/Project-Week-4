@@ -27,26 +27,26 @@ addSelect.id = 'color-dropdown';
 var colorList = 
 [
 {name : 'Please choose a color', hex:'#FFFFF'},
-{name  : 'green', hex : 'green'},
-{name  : 'red', hex : 'red'},
-{name  : 'orange', hex : 'green'},
-{name  : 'purple', hex : 'green'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'},
-{name  : 'pink', hex : '#FFC0CB'}
+{ name: 'chartreuse', hex: 'chartreuse'},
+{name  : 'aqua', hex : 'aqua'},
+{name  : 'orange', hex : 'orange'},
+{name  : 'darkmagenta', hex: 'darkmagenta'},
+{name  : 'crimson', hex : 'crimson'},
+{name  : 'darkorange', hex: 'darkorange'},
+{name  : 'darksalmon', hex : 'darksalmon'},
+{name  : 'deeppink', hex : 'deeppink'},
+{name  : 'dimgray', hex : 'dimgray'},
+{name  : 'fuchsia', hex : 'fuchsia'},
+{name  : 'gold', hex : 'gold'},
+{name  : 'greenyellow', hex : 'greenyellow'},
+{name  : 'goldenrod', hex : 'goldenrod'},
+{name  : 'gray', hex : 'gray'},
+{name  : 'lime', hex : 'lime'},
+{name  : 'peachpuff', hex : 'peachpuff'},
+{name  : 'yellowgreen', hex : 'yellowgreen'},
+{name  : 'violet', hex : 'violet'},
+{name  : 'tomato', hex : 'tomato'},
+{name  : 'plum', hex : 'plum'}
 ];
 
 // console.log(colorList.length);
@@ -88,6 +88,39 @@ for (var i = 0; i < colorbtn.length; i++)
   })
 }
 console.log("clicked button");
+});
+
+
+
+var thirdContainer = document.createElement('div');
+thirdContainer.classList.add('container');
+body.appendChild(thirdContainer);
+
+var removeColorBtn = document.createElement('button');
+removeColorBtn.innerHTML = 'remove current';
+removeColorBtn.classList.add('remove-color');
+thirdContainer.appendChild(removeColorBtn);
+removeColorBtn.addEventListener('click', function (){
+
+  var bkColor = body.style.backgroundColor;
+  
+  for (var i = 0; i < colorbtn.length; i++)
+  {
+    // console.log(colorbtn[i]);
+    console.log(colorbtn[i].value);
+    if (colorbtn[i].value == bkColor)
+    {
+      addContainer.removeChild(colorbtn[i]);
+
+    }
+    // }else   
+    // {
+    //   alert ('Please press the color button');
+    // }
+  }
+    body.style.backgroundColor = 'white';
+  
+
 });
 
 function addButton(container, color, colorHex){
