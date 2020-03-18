@@ -6,7 +6,7 @@ createBbtn(firstContainer,'red','red');
 createBbtn(firstContainer, 'yellow', 'yellow');
 createBbtn(firstContainer, 'green', 'green');
 
-var colorbtn = document.getElementsByClassName('color-btn');
+// var colorbtn = document.getElementsByClassName('color-btn');
 
 
 
