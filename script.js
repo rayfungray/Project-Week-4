@@ -8,12 +8,7 @@ createBbtn(firstContainer, 'green', 'green');
 
 var colorbtn = document.getElementsByClassName('color-btn');
 
-for (var i = 0; i < colorbtn.length; i++)
-{
-    colorbtn[i].addEventListener('click',function(event){
-    changeBKColor(body,event.target.value);
-  })
-}
+
 
 var secContainer = document.createElement('div');
 secContainer.classList.add('container');
@@ -44,14 +39,8 @@ for ( var i = 0 ; i < colorList.length; i++)
     createBbtn(firstContainer, colorName, colorHex);
     addSelect.remove(addSelect.selectedIndex);
   }  
-  for (var i = 0; i < colorbtn.length; i++)
-  {
-    console.log(colorbtn[i]);
-    colorbtn[i].addEventListener('click',function(event){
-    changeBKColor(body,event.target.value);
-  })
-}
-  console.log("clicked button");
+
+  // console.log("clicked button");
 });
 
 
@@ -66,6 +55,7 @@ removeColorBtn.classList.add('remove-color');
 thirdContainer.appendChild(removeColorBtn);
 removeColorBtn.addEventListener('click', function (){
 
+  var colorbtn = document.getElementsByClassName('color-btn');
   var bkColor = body.style.backgroundColor;
   
   for (var i = 0; i < colorbtn.length; i++)
@@ -86,6 +76,9 @@ function createBbtn(container, color, colorHex){
   addBtn.innerHTML = color;
   addBtn.style.background = colorHex;
   addBtn.value = colorHex;
+  addBtn.addEventListener('click',function(event){
+    changeBKColor(body,event.target.value);
+  });
   container.appendChild(addBtn);  
 }
 
@@ -100,4 +93,3 @@ function createColorOption(name , color){
   addOption.value = color;
   addSelect.add(addOption);
 }
-
