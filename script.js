@@ -1,3 +1,4 @@
+var firstContainer = document.createElement('div');
 var body = document.body;
 
 init();
@@ -82,7 +83,7 @@ function createColorOption(name , color){
 
 function init()
 {
-  var firstContainer = document.createElement('div');
+
   firstContainer.classList.add('container');
   body.appendChild(firstContainer);
   createBtn(firstContainer,'red','red');
