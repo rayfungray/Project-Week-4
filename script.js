@@ -1,14 +1,6 @@
 var body = document.body;
-var firstContainer = document.createElement('div');
-firstContainer.classList.add('container');
-body.appendChild(firstContainer);
-createBbtn(firstContainer,'red','red');
-createBbtn(firstContainer, 'yellow', 'yellow');
-createBbtn(firstContainer, 'green', 'green');
 
-// var colorbtn = document.getElementsByClassName('color-btn');
-
-
+init();
 
 var secContainer = document.createElement('div');
 secContainer.classList.add('container');
@@ -30,15 +22,13 @@ for ( var i = 0 ; i < colorList.length; i++)
   addColorBtn.addEventListener('click',function(){
   var colorHex = addSelect.options[addSelect.selectedIndex].value;
   var colorName = addSelect.options[addSelect.selectedIndex].text;
-  if(addSelect.selectedIndex === 0)
-  {
+  if(addSelect.selectedIndex === 0){
     alert('Please select a color');
   }
-  else
-  {
-    createBbtn(firstContainer, colorName, colorHex);
+  else{
+    createBtn(firstContainer, colorName, colorHex);
     addSelect.remove(addSelect.selectedIndex);
-  }  
+  }
 
   // console.log("clicked button");
 });
@@ -58,19 +48,16 @@ removeColorBtn.addEventListener('click', function (){
   var colorbtn = document.getElementsByClassName('color-btn');
   var bkColor = body.style.backgroundColor;
   
-  for (var i = 0; i < colorbtn.length; i++)
-  {
-    if (colorbtn[i].value == bkColor)
-    {
+  for (var i = 0; i < colorbtn.length; i++){
+    if (colorbtn[i].value == bkColor){
       createColorOption(colorbtn[i].value, colorbtn[i].value);
-      firstContainer.removeChild(colorbtn[i]);
-      
+      firstContainer.removeChild(colorbtn[i]);      
     }
   }
     body.style.backgroundColor = 'white';
 });
 
-function createBbtn(container, color, colorHex){
+function createBtn(container, color, colorHex){
   var addBtn = document.createElement('button');
   addBtn.classList.add('color-btn');
   addBtn.innerHTML = color;
@@ -82,8 +69,7 @@ function createBbtn(container, color, colorHex){
   container.appendChild(addBtn);  
 }
 
-function changeBKColor(background, color)
-{
+function changeBKColor(background, color){
   background.style.backgroundColor = color;
 }
 
@@ -92,4 +78,14 @@ function createColorOption(name , color){
   addOption.text = name;
   addOption.value = color;
   addSelect.add(addOption);
+}
+
+function init()
+{
+  var firstContainer = document.createElement('div');
+  firstContainer.classList.add('container');
+  body.appendChild(firstContainer);
+  createBtn(firstContainer,'red','red');
+  createBtn(firstContainer, 'yellow', 'yellow');
+  createBtn(firstContainer, 'green', 'green');
 }
